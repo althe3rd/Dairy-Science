@@ -283,7 +283,7 @@ footer#colophon .socialRef {
 	width: 140px;
 	height: 140px;
 	overflow: hidden;
-	border-radius: 200px;
+	border-radius: 4px;
 	margin: 0 auto;
 	transform: rotate(0.000001deg);
 	-webkit-transform: rotate(0.000001deg);
