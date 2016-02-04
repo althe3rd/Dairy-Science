@@ -24,6 +24,7 @@ get_header(); ?>
 				foreach ( $member_group_terms as $member_group_term ) {
 				    $member_group_query = new WP_Query( array(
 				        'post_type' => 'faculty',
+				        'posts_per_page' => '200',
 				        'tax_query' => array(
 				            array(
 				                'taxonomy' => 'faculty',
