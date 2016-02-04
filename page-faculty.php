@@ -1,0 +1,130 @@
+<?php
+/*
+Template Name: Faculty Page
+*/
+
+
+get_header(); ?>
+
+<div id="main">
+
+		<div id="primary">
+		
+			<div id="content" class="fullWidth facultyList" role="main">
+			
+				<header class="entry-header">
+					<h1 class="entry-title">Faculty &amp; Staff</h1>
+				</header>
+				
+				<?php
+					$member_group_terms = get_terms( 'faculty' );
+				?>
+				
+				<?php
+				foreach ( $member_group_terms as $member_group_term ) {
+				    $member_group_query = new WP_Query( array(
+				        'post_type' => 'faculty',
+				        'tax_query' => array(
+				            array(
+				                'taxonomy' => 'faculty',
+				                'field' => 'slug',
+				                'terms' => array( $member_group_term->slug ),
+				                'operator' => 'IN'
+				            )
+				        ),
+				        'meta_key' => 'last_name', 'orderby' => 'meta_value', 'order' => 'ASC'
+				    ) );
+				    ?>
+				    <h2 class="taxonomy_title"><?php echo $member_group_term->name; ?></h2>
+				    
+				    <?php
+				    if ( $member_group_query->have_posts() ) : while ( $member_group_query->have_posts() ) : $member_group_query->the_post(); ?>
+				        <div class="faculty">
+							
+							
+								<div class="personPhoto">
+    			
+								<a href="<?php the_permalink(); ?>">
+    				
+				    				<?php 
+
+$image = get_field('profile_photo');
+$size = 'medium'; // (thumbnail, medium, large, full or custom size)
+
+if( $image ) {
+
+	echo wp_get_attachment_image( $image, $size );
+
+} else { ?>
+				 
+											<img src="<?php echo get_stylesheet_directory_uri(); ?>/images/avatarplaceholder.jpg" alt=" ">
+				
+ <?php } ?>
+
+				
+								</a>
+				    		</div>
+				    		
+				<div class="text">
+    			
+    			<div class="titleheading">
+    			<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+    			<!--<div class="workingTitle"><?php the_field('working_title'); ?></div>-->
+				
+    			
+    			
+    			
+    				<div class="contactInfo">
+    			
+	    				<div class="officeLocation">
+	    					<?php the_field('office_location'); ?>
+	    				</div>
+	    				
+	    				<div class="officePhone">
+	    					<?php the_field('telephone'); ?>
+	    				</div>
+	    				
+	    				<div class="officeEmail">
+	    					<a href="mailto:<?php the_field('email'); ?>"><?php the_field('email'); ?></a>
+	    				</div>
+    				</div>
+	    		
+    			</div>
+    			
+    			
+    			
+    			
+    			    			
+					
+					
+    		</div>
+    		
+    		
+								
+								
+								
+								
+								
+							
+						</div>
+				    <?php endwhile; endif; ?>
+				    
+				    <?php
+				    // Reset things, for good measure
+				    $member_group_query = null;
+				    wp_reset_postdata();
+				}
+				?>
+
+				
+				
+		</div><!-- #content -->
+			<?php //get_sidebar(); ?>
+			<div class="clear"></div>
+			
+		</div><!-- #primary -->
+
+	</div>
+<?php get_footer(); ?>
+
+</div>

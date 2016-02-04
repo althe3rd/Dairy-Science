@@ -278,3 +278,73 @@ footer#colophon .socialRef {
 .events-table tr td i {
 	display: none;
 }
+
+.personPhoto {
+	width: 140px;
+	height: 140px;
+	overflow: hidden;
+	border-radius: 200px;
+	margin: 0 auto;
+	transform: rotate(0.000001deg);
+	-webkit-transform: rotate(0.000001deg);
+
+}
+
+.personPhoto a:hover img {
+	transform: scale(1.1);
+	-webkit-transform: scale(1.1);
+	
+}
+
+.personPhoto img {
+	width: 100%;
+	height: auto;
+	transition: 0.8s;
+	-webkit-transition: 0.8s;
+	
+}
+
+.facultyList .faculty {
+	float: left;
+	width: 33%;
+	margin-top: 40px;
+}
+
+.faculty .text {
+	text-align: center;
+	margin-top: 8px;
+}
+
+.faculty .text h3 {
+	font-size: 18px;
+	font-weight: 300;
+}
+
+.facultyImage {
+	float: right;
+	width: 30%;
+}
+
+.facultyMainInfo {
+	float: left;
+	width: 60%;
+}
+
+.single-faculty .facultyImage img, .single-seniors .facultyImage img, .single-graduatestudents .facultyImage img {
+	width: 200px;
+	height: auto;
+}
+
+.singular.single-faculty .hentry, .singular.single-seniors .hentry, .singular.single-graduatestudents .hentry {
+	padding-top: 0px;
+}
+
+#content > h2.taxonomy_title:first-child {
+	padding-top: 0px;
+}
+
+h2.taxonomy_title {
+	padding-top: 3em;
+	display: block;
+	border-bottom: 1px solid rgba(0,0,0,0.2);
+}
