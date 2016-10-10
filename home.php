@@ -263,7 +263,35 @@ get_header(); ?>
                                             <div class="boxContent">
 
 
-                                        <?php the_content(); ?>
+                                        <?php the_content();
+
+                                        /**  TODO: determine # posts to display
+
+                                        //get The Events Calendar data
+                                        $tribe_events = tribe_get_events();
+
+                                        //logit($tribe_events, '$events: ');
+
+                                        //Display event titles if events exist
+                                        if(empty($tribe_events)){
+                                        	echo 'no events found';
+                                        }else{
+                                        	foreach($tribe_events as $event){
+                                        		$eventURL = get_permalink( $event, false );
+                                        		$eventTitle = get_the_title($event);
+
+                                        		//echo get_the_title($event) . '<br/>';
+                                        		//logit($event, '$event: ');
+                                        		//logit($event->post_content, '$event: ');
+                                        		//logit($eventURL,'$eventURL: ');
+                                        		echo '<a href="' . $eventURL . '" >' . $eventTitle . '</a><br/>';
+                                        		
+                                        	}
+                                        }
+
+                                        **/
+
+                                        ?>
 <?php endwhile; // end of the loop. ?>
 
                                              </div>
