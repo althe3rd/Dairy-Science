@@ -258,14 +258,46 @@ get_header(); ?>
 
 
                                                 <h2>Events</h2>
-																								<?php while ( have_posts() ) : the_post(); ?>
+
+									<?php
+									/**
+									$eventArgs = array('post_type'=>'tribe_events',
+										'posts_per_page'=>-1
+									);//tribe_events
+
+									$events_query = new WP_Query( $eventArgs );
+
+									//custom loop
+									if( $events_query->have_posts() ){
+
+										while( $events_query->have_posts() ){
+											$events_query->the_post();
+											?>
+											<p>posts here.</p>
+											<?php
+										}
+										//wp_reset_postdata();//Restore Original Post Data
+										wp_reset_query();
+
+									}else{
+										?> 
+										<p>No posts found.</p>
+										<?php
+									}
+									
+									**/
+									
+
+									?>
                                                 <img src="<?php the_field('events_background_image'); ?>" alt=" ">
                                             <div class="boxContent">
 
 
                                         <?php the_content();
 
-                                        /**  TODO: determine # posts to display
+                                        
+                                       
+                                        //2 latest events ( title/link, date);2 latest spotlight(title/link,date)
 
                                         //get The Events Calendar data
                                         $tribe_events = tribe_get_events();
@@ -276,23 +308,33 @@ get_header(); ?>
                                         if(empty($tribe_events)){
                                         	echo 'no events found';
                                         }else{
-                                        	foreach($tribe_events as $event){
-                                        		$eventURL = get_permalink( $event, false );
-                                        		$eventTitle = get_the_title($event);
+                                        	$counter = 0;
+	                                        	foreach($tribe_events as $event){
+	                                        		
 
-                                        		//echo get_the_title($event) . '<br/>';
-                                        		//logit($event, '$event: ');
-                                        		//logit($event->post_content, '$event: ');
-                                        		//logit($eventURL,'$eventURL: ');
-                                        		echo '<a href="' . $eventURL . '" >' . $eventTitle . '</a><br/>';
-                                        		
-                                        	}
+	                                        		if($counter < 2){
+
+		                                        		$eventURL = get_permalink( $event, false );
+		                                        		$eventTitle = get_the_title($event);
+
+		                                        		//echo get_the_title($event) . '<br/>';
+		                                        		//logit($event, '$event: ');
+		                                        		//logit($event->post_content, '$event: ');
+		                                        		//logit($eventURL,'$eventURL: ');
+		                                        		echo '<a href="' . $eventURL . '" >' . $eventTitle . '</a><br/>';
+		                                        		$counter++;
+
+	                                        		}
+	                                        		
+	                                        	}
+                                        	
                                         }
 
-                                        **/
+                                      	
 
                                         ?>
-<?php endwhile; // end of the loop. ?>
+
+
 
                                              </div>
                             <div class="topShade"></div>
