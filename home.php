@@ -18,12 +18,7 @@
 
 get_header(); ?>
 
-
-
-
 	<div id="main">
-
-
 		<div id="primary">
 			<div id="content" class="fullWidth" role="main">
 
@@ -215,13 +210,6 @@ get_header(); ?>
                             <div class="topShade"></div>
 							<div class="bottomShade"></div>
 
-
-
-
-
-
-
-
 							<a href="<?php get_site_url(); ?>/category/news/" class="moreButton">More Dairy News</a>
 
 
@@ -255,11 +243,12 @@ get_header(); ?>
 
 					<div class="span-33">
 						<div class="box dropin2 doubleHeight events">
-
-
                                                 <h2>Events</h2>
 
 									<?php
+
+									//$cust_vals = get_post_custom_values('events');
+
 									/**
 									$eventArgs = array('post_type'=>'tribe_events',
 										'posts_per_page'=>-1
@@ -286,17 +275,17 @@ get_header(); ?>
 									}
 									
 									**/
+
+
 									
 
 									?>
-                                                <img src="<?php the_field('events_background_image'); ?>" alt=" ">
+                                            <img src="<?php the_field('events_background_image'); ?>" alt=" ">
                                             <div class="boxContent">
 
 
                                         <?php the_content();
-
-                                        
-                                       
+                                        /**
                                         //2 latest events ( title/link, date);2 latest spotlight(title/link,date)
 
                                         //get The Events Calendar data
@@ -308,34 +297,29 @@ get_header(); ?>
                                         if(empty($tribe_events)){
                                         	echo 'no events found';
                                         }else{
+
                                         	$counter = 0;
+
 	                                        	foreach($tribe_events as $event){
 	                                        		
-
 	                                        		if($counter < 2){
 
 		                                        		$eventURL = get_permalink( $event, false );
 		                                        		$eventTitle = get_the_title($event);
-
 		                                        		//echo get_the_title($event) . '<br/>';
 		                                        		//logit($event, '$event: ');
 		                                        		//logit($event->post_content, '$event: ');
 		                                        		//logit($eventURL,'$eventURL: ');
 		                                        		echo '<a href="' . $eventURL . '" >' . $eventTitle . '</a><br/>';
 		                                        		$counter++;
-
 	                                        		}
 	                                        		
 	                                        	}
                                         	
                                         }
-
-                                      	
+                                        **/
 
                                         ?>
-
-
-
                                              </div>
                             <div class="topShade"></div>
 							<div class="bottomShade"></div>

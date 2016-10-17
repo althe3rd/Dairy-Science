@@ -350,3 +350,8 @@ h2.taxonomy_title {
 	display: block;
 	border-bottom: 1px solid rgba(0,0,0,0.2);
 }
+
+/* Tribe Events Custom CSS */
+ul.ecs-event-list li h4 a{
+	font-size:14px;
+}
