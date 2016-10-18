@@ -352,6 +352,20 @@ h2.taxonomy_title {
 }
 
 /* Tribe Events Custom CSS */
-ul.ecs-event-list li h4 a{
-	font-size:14px;
+ul.ecs-event-list{
+	list-style-type:none;
+}
+
+ul.ecs-event-list li h4.entry-title{
+	line-height: 1.2em;
+	font-size:16px;
+}
+
+ul.ecs-event-list li span.duration.time{
+	font-size:11px;
+}
+
+ul.ecs-event-list li.ecs-event h4 a,ul.ecs-event-list li.ecs-event h4 a:link,ul.ecs-event-list li.ecs-event h4 a:visited,ul.ecs-event-list li.ecs-event h4 a:hover,ul.ecs-event-list li.ecs-event h4 a:active{
+	font-size:16px;
+	color:#fff;
 }
