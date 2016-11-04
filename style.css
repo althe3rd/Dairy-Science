@@ -352,20 +352,70 @@ h2.taxonomy_title {
 }
 
 /* Tribe Events Custom CSS */
+
+
 ul.ecs-event-list{
 	list-style-type:none;
+	padding:0 0 2em 0;
 }
 
 ul.ecs-event-list li h4.entry-title{
-	line-height: 1.2em;
+	/*line-height: 1.2em;
 	font-size:16px;
+	 -webkit-font-smoothing: antialiased; */
 }
 
 ul.ecs-event-list li span.duration.time{
 	font-size:11px;
+	 -webkit-font-smoothing: antialiased;
+	 color:#deb846;
 }
 
 ul.ecs-event-list li.ecs-event h4 a,ul.ecs-event-list li.ecs-event h4 a:link,ul.ecs-event-list li.ecs-event h4 a:visited,ul.ecs-event-list li.ecs-event h4 a:hover,ul.ecs-event-list li.ecs-event h4 a:active{
 	font-size:16px;
 	color:#fff;
+
 }
+
+#content div.boxContent .highlighted{
+	padding:0 0 2em 0;
+}
+
+#content div.boxContent > .ecs-event-list{
+	padding:0 0 2em 0;
+	margin:0;
+}
+
+#content div.boxContent .highlighted h3{
+	padding-left:1.5em;
+	font-size:12px;
+
+	font-size: 13px;
+	font-weight:bold;
+    z-index: 2;
+    color: rgba(255,255,255,0.9);
+    font-family: "Open Sans", sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 0px;
+}
+
+#content div.boxContent ul.ecs-event-list li h4.entry-title.summary a{
+	font-size: 20px;
+	font-family:"Open Sans Light",sans-serif;
+	font-stretch:normal;
+	font-style:normal;
+	font-variant-caps:normal;
+	font-variant-ligatures: normal;
+	font-variant-numeric:normal;
+	font-weight:400;
+	text-shadow:none;
+	text-rendering:auto;
+	line-height: 22.1px;
+	margin-top:12px;
+	color:#fff;
+}
+
+/* color:#deb846;*/
+
+
