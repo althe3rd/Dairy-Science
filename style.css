@@ -360,9 +360,9 @@ ul.ecs-event-list{
 }
 
 ul.ecs-event-list li h4.entry-title{
-	/*line-height: 1.2em;
+	line-height: 1.2em;
 	font-size:16px;
-	 -webkit-font-smoothing: antialiased; */
+	 -webkit-font-smoothing: antialiased; 
 }
 
 ul.ecs-event-list li span.duration.time{
@@ -417,5 +417,6 @@ ul.ecs-event-list li.ecs-event h4 a,ul.ecs-event-list li.ecs-event h4 a:link,ul.
 }
 
 /* color:#deb846;*/
+
 
 
