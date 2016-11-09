@@ -324,7 +324,7 @@ get_header(); ?>
                             <div class="topShade"></div>
 							<div class="bottomShade"></div>
 								<!-- .spotlight_slide -->
-                       <a href="<?php get_site_url(); ?>/calendar-2/" class="moreButton">Events Calendar</a>
+                       <a href="<?php get_site_url(); ?>/dysci-event/" class="moreButton">Events Calendar</a>
 
 						<div class="windows8">
 							<div class="wBall" id="wBall_1">
