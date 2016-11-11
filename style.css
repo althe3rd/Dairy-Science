@@ -357,6 +357,12 @@ h2.taxonomy_title {
 ul.ecs-event-list{
 	list-style-type:none;
 	padding:0 0 2em 0;
+	margin-left:2em;
+}
+
+html body div#primary div.boxContent div.highlighted ul.ecs-event-list li.ecs-event h4.entry-title.summary a, html body div.mobileScroll div#content div.boxContent ul.ecs-event-list li.ecs-event h4.entry-title.summary a{
+	font-weight:300;
+	font-size:14px;
 }
 
 ul.ecs-event-list li h4.entry-title{
