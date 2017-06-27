@@ -102,7 +102,7 @@ get_header(); ?>
 
 					</div>
 						<div class="box dropin3">
-							<h2>Blog</h2>
+							<h2>People</h2>
 
 
 <?php query_posts("category_name=blog&posts_per_page=1"); ?>
